@@ -1,0 +1,12 @@
+<div>
+    {{ error }}
+    <a href="/">Back to Search</a>
+    <h2>Issues: {{ issues }}</h2>
+    <h2>Collaborators</h2>
+    <ul>
+        <li ng-repeat="collaborator in collaborators | orderBy:collaboratorsSortOrder">
+            <img ng-src="{{ collaborator.avatar_url }}" title="{{ collaborator.login }}" height="80"/>
+            {{ collaborator.login }}
+        </li>
+    </ul>
+</div>

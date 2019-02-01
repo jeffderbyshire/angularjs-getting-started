@@ -1,5 +1,7 @@
-<div id="userDetails">
+<div>
+    <a href="/">Back to Search</a>
 	<h2>Name: {{user.name}}</h2>
+    {{ error }}
 	<img ng-src="{{user.avatar_url}}" title="{{user.name}}" height="80"/>
   Order:
   <select ng-model="repoSortOrder">
@@ -8,7 +10,7 @@
     <option value="+language">Language</option>
   </select>
 </div>
-        
+
 <table>
   <thead>
     <th>Name</th>
@@ -17,7 +19,7 @@
   </thead>
   <tbody>
     <tr ng-repeat="repo in repos | orderBy:repoSortOrder">
-      <td>{{repo.name}}</td>
+      <td><a href="#!/user/{{user.name}}/{{repo.name}}">{{repo.name}}</a></td>
       <td>{{repo.stargazers_count | number}}</td>
       <td>{{repo.language}}</td>
     </tr>
